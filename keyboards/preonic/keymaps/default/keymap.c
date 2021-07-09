@@ -43,10 +43,15 @@ const rgblight_segment_t PROGMEM raise_layer[] = RGBLIGHT_LAYER_SEGMENTS(
   {1, 1, HSV_ORANGE},
   {8, 1, HSV_ORANGE}
 );
+const rgblight_segment_t PROGMEM both_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+  {1, 1, HSV_RED},
+  {8, 1, HSV_RED}
+);
 
 const rgblight_segment_t* const PROGMEM rgb_layers[] = RGBLIGHT_LAYERS_LIST(
   lower_layer,
-  raise_layer
+  raise_layer,
+  both_layer
 );
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -334,11 +339,13 @@ void keyboard_post_init_user(void) {
 layer_state_t default_layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(0, layer_state_cmp(state, _LOWER));
     rgblight_set_layer_state(1, layer_state_cmp(state, _RAISE));
+    rgblight_set_layer_state(2, layer_state_cmp(state, _LOWER) && layer_state_cmp(state, _RAISE));
     return state;
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(0, layer_state_cmp(state, _LOWER));
     rgblight_set_layer_state(1, layer_state_cmp(state, _RAISE));
+    rgblight_set_layer_state(2, layer_state_cmp(state, _LOWER) && layer_state_cmp(state, _RAISE));
     return state;
 }
