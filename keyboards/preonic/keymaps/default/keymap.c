@@ -35,6 +35,20 @@ enum preonic_keycodes {
   BACKLIT
 };
 
+const rgblight_segment_t PROGMEM lower_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+  {1, 1, HSV_PURPLE},
+  {8, 1, HSV_PURPLE}
+);
+const rgblight_segment_t PROGMEM raise_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+  {1, 1, HSV_ORANGE},
+  {8, 1, HSV_ORANGE}
+);
+
+const rgblight_segment_t* const PROGMEM rgb_layers[] = RGBLIGHT_LAYERS_LIST(
+  lower_layer,
+  raise_layer
+);
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Qwerty
@@ -162,7 +176,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______, MUV_DE,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  _______, _______, _______, _______, _______,
   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 )
-
 
 };
 
@@ -312,4 +325,20 @@ bool music_mask_user(uint16_t keycode) {
     default:
       return true;
   }
+}
+
+void keyboard_post_init_user(void) {
+  rgblight_layers = rgb_layers;
+}
+
+layer_state_t default_layer_state_set_user(layer_state_t state) {
+    rgblight_set_layer_state(0, layer_state_cmp(state, _LOWER));
+    rgblight_set_layer_state(1, layer_state_cmp(state, _RAISE));
+    return state;
+}
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    rgblight_set_layer_state(0, layer_state_cmp(state, _LOWER));
+    rgblight_set_layer_state(1, layer_state_cmp(state, _RAISE));
+    return state;
 }
