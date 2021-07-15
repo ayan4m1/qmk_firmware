@@ -335,15 +335,23 @@ void keyboard_post_init_user(void) {
 }
 
 layer_state_t default_layer_state_set_user(layer_state_t state) {
-    rgblight_set_layer_state(0, layer_state_cmp(state, _LOWER));
-    rgblight_set_layer_state(1, layer_state_cmp(state, _RAISE));
-    rgblight_set_layer_state(2, layer_state_cmp(state, _LOWER) && layer_state_cmp(state, _RAISE));
-    return state;
+  const bool lowerState = layer_state_cmp(state, _LOWER);
+  const bool raiseState = layer_state_cmp(state, _RAISE);
+
+  rgblight_set_layer_state(0, lowerState);
+  rgblight_set_layer_state(1, raiseState);
+  rgblight_set_layer_state(2, lowerState && raiseState);
+
+  return state;
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    rgblight_set_layer_state(0, layer_state_cmp(state, _LOWER));
-    rgblight_set_layer_state(1, layer_state_cmp(state, _RAISE));
-    rgblight_set_layer_state(2, layer_state_cmp(state, _LOWER) && layer_state_cmp(state, _RAISE));
-    return state;
+  const bool lowerState = layer_state_cmp(state, _LOWER);
+  const bool raiseState = layer_state_cmp(state, _RAISE);
+
+  rgblight_set_layer_state(0, lowerState);
+  rgblight_set_layer_state(1, raiseState);
+  rgblight_set_layer_state(2, lowerState && raiseState);
+
+  return state;
 }
