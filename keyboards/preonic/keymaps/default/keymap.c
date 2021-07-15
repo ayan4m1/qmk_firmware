@@ -36,12 +36,10 @@ enum preonic_keycodes {
 };
 
 const rgblight_segment_t PROGMEM lower_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-  {0, 3, HSV_PREONIC_PURPLE},
-  {7, 2, HSV_PREONIC_PURPLE}
+  {5, 4, HSV_PREONIC_ORANGE}
 );
 const rgblight_segment_t PROGMEM raise_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-  {0, 3, HSV_PREONIC_ORANGE},
-  {7, 2, HSV_PREONIC_ORANGE}
+  {1, 4, HSV_PREONIC_ORANGE}
 );
 const rgblight_segment_t PROGMEM both_layer[] = RGBLIGHT_LAYER_SEGMENTS(
   {0, 3, HSV_RED},
