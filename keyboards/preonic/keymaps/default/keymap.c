@@ -332,6 +332,7 @@ bool music_mask_user(uint16_t keycode) {
 
 void keyboard_post_init_user(void) {
   rgblight_layers = rgb_layers;
+  rgblight_sethsv(HSV_PREONIC_BLUE);
 }
 
 layer_state_t default_layer_state_set_user(layer_state_t state) {
