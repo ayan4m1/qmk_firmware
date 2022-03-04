@@ -29,7 +29,7 @@ SOFTWARE.
 /* USB Device descriptor parameter */
 #define VENDOR_ID 0x534C
 #define PRODUCT_ID 0x5E99
-#define DEVICE_VER 0x0001
+#define DEVICE_VER 0x0002
 #define MANUFACTURER ayan4m1
 #define PRODUCT Wasp Side
 
@@ -37,11 +37,19 @@ SOFTWARE.
 #define MATRIX_ROWS 10
 #define MATRIX_COLS 8
 
-/* key matrix pins */
-#define MATRIX_ROW_PINS \
+// REVISION ONE, DO NOT USE
+/*#define MATRIX_ROW_PINS \
     { D7, C6, D4, D0, D1, D2, F1, F0, B2, B3 }
 #define MATRIX_COL_PINS \
     { B1, F7, F6, F5, F4, E6, B7, B4 }
+#define RGB_DI_PIN C7*/
+
+/* key matrix pins */
+
+#define MATRIX_ROW_PINS \
+    { D1, D0, D4, C6, D7, E6, B4, B5, B7, C7 }
+#define MATRIX_COL_PINS \
+    { F1, F0, B6, B2, B3, B1, F7, F6 }
 #define UNUSED_PINS
 
 /* COL2ROW or ROW2COL */
@@ -50,7 +58,7 @@ SOFTWARE.
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE 5
 
-#define RGB_DI_PIN C7
+#define RGB_DI_PIN F5
 #define RGBLED_NUM 5
 
 #define RGBLIGHT_DEFAULT_HUE 120
