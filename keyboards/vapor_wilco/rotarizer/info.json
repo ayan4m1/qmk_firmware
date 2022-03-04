@@ -1,0 +1,46 @@
+{
+  "keyboard_name": "Rotarizer",
+  "layouts": {
+    "LAYOUT": {
+      "layout": [
+        {
+          "label": "R1",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "label": "R2",
+          "x": 1,
+          "y": 0
+        },
+        {
+          "label": "R3",
+          "x": 2,
+          "y": 0
+        },
+        {
+          "label": "F1",
+          "x": 0,
+          "y": 1
+        },
+        {
+          "label": "F2",
+          "x": 1,
+          "y": 1
+        },
+        {
+          "label": "F3",
+          "x": 2,
+          "y": 1
+        },
+        {
+          "label": "F4",
+          "x": 3,
+          "y": 1
+        }
+      ]
+    }
+  },
+  "maintainer": "ayan4m1 <andrew@bulletlogic.com>",
+  "url": "https://github.com/ayan4m1/rotarizer"
+}
