@@ -1,0 +1,1 @@
+#define BACKLIGHT_ON_STATE 0
