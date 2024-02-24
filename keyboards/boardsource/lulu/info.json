@@ -5,10 +5,10 @@
   "diode_direction": "COL2ROW",
   "features": {
     "nkro": true,
-    "bootmagic": true,
+    "rgb_matrix": true,
+    "bootmagic": false,
     "extrakey": false,
     "mousekey": false,
-    "rgb_matrix": false,
     "encoder": false,
     "oled": false
   },
@@ -24,11 +24,9 @@
   "rgb_matrix": {
     "driver": "ws2812",
     "split_count": [35, 35],
-    "max_brightness": 150,
+    "max_brightness": 127,
     "animations": {
-      "breathing": true,
-      "band_sat": true,
-      "band_val": true
+      "breathing": true
     },
     "layout": [
       {"flags": 2, "x": 86, "y": 55},
