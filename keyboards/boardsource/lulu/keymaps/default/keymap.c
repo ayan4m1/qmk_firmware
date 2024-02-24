@@ -3,6 +3,8 @@
 
 #include QMK_KEYBOARD_H
 
+#include <ssd1306.h>
+
 enum layers {
     _QWERTY,
     _RAISE,
@@ -12,6 +14,8 @@ enum layers {
 
 #define RAISE MO(_RAISE)
 #define LOWER MO(_LOWER)
+
+bool inited = false;
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  
@@ -105,4 +109,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 layer_state_t layer_state_set_user(layer_state_t state) {
    return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
+}
+
+void keyboard_pre_init_user(void) {
+  ssd1306_init();
+  inited = true;
+}
+
+void housekeeping_task_user(void) {
+  if (!inited) {
+    return;
+  }
+
+  ssd1306_send_screen(0);
 }
