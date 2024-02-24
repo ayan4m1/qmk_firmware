@@ -4,13 +4,13 @@
   "maintainer": "waffle87",
   "diode_direction": "COL2ROW",
   "features": {
-    "bootmagic": true,
-    "extrakey": true,
-    "mousekey": true,
     "nkro": true,
-    "rgb_matrix": true,
-    "oled": true,
-    "encoder": true
+    "bootmagic": true,
+    "extrakey": false,
+    "mousekey": false,
+    "rgb_matrix": false,
+    "encoder": false,
+    "oled": false
   },
   "url": "https://boardsource.xyz/projects/60de24d6847112054777bbdd",
   "usb": {
@@ -26,9 +26,6 @@
     "split_count": [35, 35],
     "max_brightness": 150,
     "animations": {
-      "alphas_mods": true,
-      "gradient_up_down": true,
-      "gradient_left_right": true,
       "breathing": true,
       "band_sat": true,
       "band_val": true
